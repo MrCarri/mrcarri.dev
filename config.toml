@@ -1,4 +1,6 @@
-baseURL = "https://mrcarri.gitlab.io/"
+baseURL = "https://mrcarri.github.io/mrcarri.dev/"
 languageCode = "en-us"
-title = "mrcarri.dev"
-theme = "EL_TEMA_QUE_USAS"
+title = "MrCarri Dev Blog"
+theme = "papermod"      # O el tema que estés usando
+paginate = 5            # Posts por página
+enableGitInfo = true    # Útil para mostrar fecha de última actualización
