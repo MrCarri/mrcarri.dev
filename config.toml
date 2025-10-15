@@ -1,0 +1,4 @@
+baseURL = "https://mrcarri.gitlab.io/"
+languageCode = "en-us"
+title = "mrcarri.dev"
+theme = "EL_TEMA_QUE_USAS"
