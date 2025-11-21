@@ -7,7 +7,6 @@ description: "How I set up my own Suwayomi server with Podman to read manga priv
 draft: false
 ---
 
-# Self-hosting a Suwayomi Manga Reader Instance with Podman
 
 ## The preamble
 
@@ -90,7 +89,7 @@ You’ll need a GitHub token to log in. Once done, the image will download as us
 
 I opened podman desktop to create a new container from the pulled image. I clicked on containers, and I created one from the image I just pulled.
 
-![Creating container from suwayomi image](images/suwayomi-podman/screenshot1.png)
+![Creating container from suwayomi image](screenshot1.png)
 
 There, I changed the name, left the port as 4567 (the default is fine) and I added a few binds. This way I add my own local copies of mangas to it, and also I can backup in the case something happens.
 
@@ -99,7 +98,7 @@ There, I changed the name, left the port as 4567 (the default is fine) and I add
     "/home/user/suwayomi/manga:/manga"
 ```
 
-![Adding folder mappings](images/suwayomi-podman/screenshot2.png)
+![Adding folder mappings](screenshot2.png)
 
 
 ### Step 3 — Run and enjoy
@@ -110,7 +109,7 @@ What's left now is to add your favorite Mihon compatible extensions (I won't pro
 
 I added a few mangas and everything is working perfectly. I also synchronized it with my personal account for Anilist, so I can update the tracking automatically.
 
-![wrapping up](images/suwayomi-podman/screenshot3.png)
+![wrapping up](screenshot3.png)
 
 
 ## Wrap up
