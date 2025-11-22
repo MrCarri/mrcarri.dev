@@ -23,12 +23,15 @@ For this experiment, I decided on the following requirements:
 - No outside connections to the instance, only from local network.
 - Migration from podman desktop to a docker / podman compose format, to make it portable.
 - The Suwayomi image will be the stable version.
+- Ensuring persistence of the container data.
 
 During my testing I found some issues:
 
 - The version I was using for the container had some kind of issue with certain websites. I think it was related to some unmet dependencies in the image due an update, so I took the stable one instead.
 
 - Comics weren't updating properly. Turns out I misconfigured some options on automatic updates, so no update was being done.
+
+- If the container was deleted, everything was lost. This wasn't a problem using podman Desktop because you don't actually delete it but in order to handle backups, this should be taken into account in production environments.
 
 
 ## The process
@@ -68,10 +71,9 @@ services:
       - "4567:4567"
     environment:
       - TZ=Europe/Madrid
+    user: 1000:1000
     volumes:
-      - /home/user/suwayomi/data:/home/suwayomi/.suwayomi
-      - /home/user/suwayomi/manga:/manga
-
+      - /home/user/suwayomi/data:/home/suwayomi/.local/share/Tachidesk:Z
     restart: unless-stopped
 ```
 
@@ -93,17 +95,6 @@ environment:
       - TZ=Europe/Madrid
 ```
 
-This configuration is essential for data persistence. As explained in the previous article, we map two volumes: the data folder (/home/suwayomi/.suwayomi) stores all configuration and database files, and the manga folder (/manga) allows you to add or manage downloaded content, including your own local scans.
-
-```yml
-
-volumes:
-    - /home/user/suwayomi/data:/home/suwayomi/.suwayomi
-    - /home/user/suwayomi/manga:/manga
-
-```
-
-"Note: Remember to replace /home/user/ with the actual path on your server."
 
 The last part, ensures that the container restarts automatically (for example, if the server goes down and restarts)
 
@@ -113,6 +104,32 @@ restart: unless-stopped
 
 ```
 
+#### The data persistence
+
+As you can see, I've left the best for the last. This configuration is essential for data persistence. As explained in the previous article, if we delete the container, everything is lost. Using a volume, we can persist data into the system. This actually wouldn't be complicated on a docker based setup, but some problems arise when using podman:
+
+- I'm using podman rootless. This way, the container runs under the user namespace and it's more secure. On top of that, Fedora includes SELinux on top, so if a container is doing shenanigans (a.k.a writing on the host disk) it will prevent it. This has been a bit of a headache, but this is the final config I ended up with:
+
+First, I used this command, *ushare*. What we are doing is to change permissions of all data/ directory (where we are mapping all the config) to the user 1000:1000. This is because when we execute a podman container with a certain user, podman converts the host OS files to Root ownership, and when the user inside the containers tries to modify them, we get a permission error. This commands fixes this behavior, ensuring that the permissions are set correctly *before* actually running the container.
+
+```bash
+podman unshare chown -R 1000:1000 home/user/suwayomi/data/
+```
+
+Then, another issue arises. Since now we have user 1000 trying to use files that are mounted from the host OS, SELinux comes to our rescue to stop it. I will use the option :Z (not :z! on this case). This option grants permissions only for this container. (the :z allows multiple containers access, but we don't want this here).
+
+```yml
+user: 1000:1000
+volumes:
+    - /home/user/suwayomi/data:/home/suwayomi/.local/share/Tachidesk:Z
+```
+
+"Note: Remember to replace /home/user/ with the actual path on your server."
+
+And that's it, issue avoided. With docker and root permissions, this would not happen, but we do things differently here.
+
+
+
 ## Wrap up
 
-And that's it! After a short investigation, I successfully deployed to my homelab!
+And that's it! After a short investigation, we successfully migrated the prototype to a persistent, stable service on the homelab.

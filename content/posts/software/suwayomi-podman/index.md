@@ -91,15 +91,7 @@ I opened podman desktop to create a new container from the pulled image. I click
 
 ![Creating container from suwayomi image](screenshot1.png)
 
-There, I changed the name, left the port as 4567 (the default is fine) and I added a few binds. This way I add my own local copies of mangas to it, and also I can backup in the case something happens.
-
-```bash
-    "/home/user/suwayomi/data:/home/suwayomi/",
-    "/home/user/suwayomi/manga:/manga"
-```
-
-![Adding folder mappings](screenshot2.png)
-
+There, I changed the name, left the port as 4567 (the default is fine).
 
 ### Step 3 — Run and enjoy
 
@@ -114,12 +106,14 @@ I added a few mangas and everything is working perfectly. I also synchronized it
 
 ## Wrap up
 
-To summarize, Suwayomi is a fantastic option to store, read and organize your mangas locally, with full control and privacy. 
+To summarize, Suwayomi is a fantastic option to store, read and organize your mangas locally, with full control and privacy.
 It’s easy to set up through the GUI, but it’s also flexible enough for Docker or Podman setups.
+
+As you probably realized, as long as you don't delete the container, it will store the data and nothing will be lost. In a next article, I will explain a more-permanent solution.
 
 My next steps:
 
-- I will move it into a dedicated server that is running 24/7 at home
+- I will move it into a dedicated server that is running 24/7 at home, and will add persistence to the container.
 - I want to setup a WireGuard-based VPN's or something like tailscale will make it accessible remotely so I can use it everywhere.
 
 That's it! I hope you enjoyed the little journey, see you on the next one!
