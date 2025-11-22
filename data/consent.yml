@@ -4,7 +4,7 @@ items:
     is_functional: false
     script_file: ga.js
 
-  - title: Buy Me a Coffee Widget
-    description: This is a third-party script to enable support for my personal projects through the donation interface.
-    is_functional: false
-    script_file: bmac.js
+  # - title: Buy Me a Coffee Widget
+  #   description: This is a third-party script to enable support for my personal projects through the donation interface.
+  #   is_functional: false
+  #   script_file: bmac.js
