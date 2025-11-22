@@ -34,18 +34,16 @@ This data is stored locally in Barcelona, Spain, and is **deleted periodically**
 
 This website uses **Cloudflare Tunnel** for secure delivery. Cloudflare acts as a proxy and may collect and process log data, including IP addresses, to provide security services and prevent DDoS attacks. This data is handled according to the Cloudflare Privacy Policy.
 
+
+### 1.3 Cloudflare Web Analytics (Functional Monitoring)
+
+We use Cloudflare Web Analytics to measure overall website traffic and visitor trends. This service is used for **functional monitoring** only and **does not process any personal data**, cookies, or device fingerprinting. This usage is compliant with GDPR as the data is anonymized at the edge and is considered essential monitoring data.
+
 ---
 
-## 2. Data Collected (Scripts Requiring Consent)
+## 2. Tracking and Cookies
 
-We use a strict consent mechanism (GDPR-compliant cookie banner) to only load the following third-party services after you explicitly consent:
-
-| Service | Data Collected | Purpose |
-| :--- | :--- | :--- |
-| **Google Analytics** | Anonymous user behaviour data (page views, session duration, referral source). Your IP address is potentially processed by Google. | To analyze traffic and improve content based on reader interest. |
-| **Buy Me a Coffee** | Data necessary to display the donation widget and process payments/donations (handled via their external platform). | To provide a means for voluntary reader support. |
-
-If you click "Deny" or manage your preferences, these services will **not** be loaded.
+This website **does not use persistent cookies or tracking cookies**. The analytics service (Cloudflare Web Analytics) is *cookie-less*. Therefore, a consent banner is not required for general traffic.
 
 ---
 
