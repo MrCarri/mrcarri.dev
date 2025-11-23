@@ -57,6 +57,14 @@ sudo dnf install podman-compose
 
 This podman-compose package provides an interface so podman can use docker compose files. It's compatible with docker compose.
 
+Then, I enabled lingering for my user (replace it with yours):
+
+```bash
+loginctl enable-linger user
+```
+
+This is needed because podman containers will be running under the user that launches de compose, instead of a *daemon* as docker does. This means that once the user has disconnected after a grace period the process will be terminated. So, enabling lingering means that the process can be kept alive.
+
 ### The Compose file:
 
 After investigating a little bit, I inspected the Kubernetes (kube) configuration file that was generated on podman desktop, and came out with the following .yml configuration file:
@@ -133,3 +141,5 @@ And that's it, issue avoided. With docker and root permissions, this would not h
 ## Wrap up
 
 And that's it! After a short investigation, we successfully migrated the prototype to a persistent, stable service on the homelab.
+
+A few notes: I know that using compose with podman might seem not very efficient since other native options exist, such as Quadlets. I'm leaving those for a future article, I need to investigate it a little bit more.
