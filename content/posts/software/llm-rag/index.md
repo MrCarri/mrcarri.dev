@@ -1,6 +1,6 @@
 ---
 title: "Building a Self-Hosted AI Application to Search Books"
-date: 2026-01-06
+date: 2026-01-05
 categories: ["Software", "AI"]
 tags: ["RAG", "LLM", "AI", "Manga", "Ollama"]
 description: "Using ChromaDB as a vector store, MiniLM‑L6‑v2 for embeddings, and Ollama‑hosted LLMs, I built a local RAG pipeline that indexes ~10 k manga titles and returns five relevant recommendations on a consumer‑grade RTX 2060."

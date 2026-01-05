@@ -1,6 +1,6 @@
 ---
 title: "Privacy Policy"
-date: 2025-11-22
+date: 2026-01-06
 slug: "privacy-policy"
 url: "/privacy-policy/"
 type: "page"
@@ -8,64 +8,54 @@ type: "page"
 
 # Privacy Policy
 
-**Last Updated:** November 2025
+**Last Updated:** January 2026
 
-This Privacy Policy explains how MrCarri.dev collects and processes data when you use this website.
+This Privacy Policy explains how MrCarri.dev collects and processes data. This site is designed with a "privacy-first" approach, focusing on transparency and minimal data collection.
 
 The data controller and owner of this website is Alexandre Carrillo (MrCarri), based in Barcelona, Spain.
 
 ---
 
-## 1. Data Collected (Logs and Hosting)
+## 1. Data Collection and Hosting
 
-### 1.1 First-Party Log Data (Self-Hosting and Nginx/Caddy)
+### 1.1 Infrastructure (GitHub Pages)
 
-The hosting server (Mac Mini) uses a standard web server (e.g., Nginx or Caddy) to process traffic from the Cloudflare Tunnel. This server automatically collects access logs for purely **functional purposes** (stability, security, and error monitoring).
+This website is hosted using **GitHub Pages**. When you visit this site, GitHub may collect and process standard web server logs (including your IP address, browser type, and timestamp) to ensure the security and integrity of the service. 
 
-These functional logs may contain technical data such as:
+As the website owner, I do not have direct access to these raw server logs. This data is handled according to the [GitHub Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement).
 
-* Your (proxied) IP address.
-* Browser type and version.
-* Timestamp of the request.
+### 1.2 Privacy-Friendly Analytics (GoatCounter)
 
-This data is stored locally in Barcelona, Spain, and is **deleted periodically** (e.g., monthly) as it is not used for personal tracking or analytics.
+I use **GoatCounter** to understand how many people visit the site and which articles are the most popular. I chose this tool because:
+* **No Cookies:** It does not use cookies or local storage to track you.
+* **No Personal Data:** It does not collect IP addresses or any other personally identifiable information (PII). It uses a de-identified hash to distinguish unique visits for a short period.
+* **Open Source:** You can audit exactly what it does.
 
-### 1.2 Third-Party Log Data (Cloudflare)
-
-This website uses **Cloudflare Tunnel** for secure delivery. Cloudflare acts as a proxy and may collect and process log data, including IP addresses, to provide security services and prevent DDoS attacks. This data is handled according to the Cloudflare Privacy Policy.
-
-
-### 1.3 Cloudflare Web Analytics (Functional Monitoring)
-
-We use Cloudflare Web Analytics to measure overall website traffic and visitor trends. This service is used for **functional monitoring** only and **does not process any personal data**, cookies, or device fingerprinting. This usage is compliant with GDPR as the data is anonymized at the edge and is considered essential monitoring data.
+This monitoring is based on **legitimate interest** (Art. 6(1)(f) GDPR) to improve the content of the blog without compromising user privacy.
 
 ---
 
 ## 2. Tracking and Cookies
 
-This website **does not use persistent cookies or tracking cookies**. The analytics service (Cloudflare Web Analytics) is *cookie-less*. Therefore, a consent banner is not required for general traffic.
+This website **does not use tracking cookies, marketing cookies, or persistent identifiers**. Because no non-essential personal data is processed and no cookies are used for tracking, a consent banner is not required under GDPR/ePrivacy regulations.
 
 ---
 
-## 3. Data Storage and Fonts
+## 3. External Services and Fonts
 
-### 3.1 Data Storage
+### 3.1 Fonts
+This website uses **system fonts** only. No requests are made to third-party services like Google Fonts, ensuring your IP address is not shared with third parties for typography delivery.
 
-All first-party data (server logs) is stored locally on the server in Barcelona, Spain. We do not use permanent or essential cookies for functionality.
-
-### 3.2 Fonts
-
-This website uses **system fonts** only. No external services are called to load typography, ensuring that your IP address is not shared with any third party for font delivery.
+### 3.2 Ethical Ads (Future Integration)
+In the future, this site may display ads through privacy-focused networks (like EthicalAds). These networks are selected specifically because they do not use cookies or tracking, relying instead on the **context** of the page you are reading.
 
 ---
 
 ## 4. Your Rights (GDPR)
 
-As a data subject, you have the right to access, rectify, restrict processing, or erase your data. Since we do not store identifying data (we rely on anonymized/consented third-party services), exercising these rights applies mainly to data stored in our server logs or transmitted to consented third parties.
+Under the GDPR, you have the right to access, rectify, or erase any personal data held about you. However, since this website **does not store identifying information** about its visitors (no databases, no accounts, anonymized analytics), I generally cannot identify specific users to fulfill such requests.
 
-**Contact:** If you have questions regarding this policy or wish to exercise your rights, please contact the data controller:
+**Contact:** If you have any questions, please contact the data controller:
 
 * **Email:** alexandre.carri@proton.me
 * **Controller:** Alexandre Carrillo (MrCarri)
-
-***
