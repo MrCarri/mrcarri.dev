@@ -1,0 +1,52 @@
+{{- if lt hugo.Version "0.146.0" }}
+{{- errorf "=> hugo v0.146.0 or greater is required for hugo-PaperMod to build " }}
+{{- end -}}
+
+<!DOCTYPE html>
+<html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
+
+<head>
+    {{- partial "head.html" . }}
+    <link rel="stylesheet" href="{{ "css/extended/custom.css" | relURL }}">
+</head>
+
+<body class="
+{{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) -}}
+{{- print "list" -}}
+{{- end -}}
+{{- if eq site.Params.defaultTheme `dark` -}}
+{{- print " dark" }}
+{{- end -}}
+" id="top">
+    {{- partialCached "header.html" . .Page -}}
+    <main class="main">
+        {{- block "main" . }}{{ end }}
+    </main>
+    {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
+    {{ if .Store.Get "hasMermaid" }}
+      <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+        const isDark = document.body.classList.contains("dark");
+        mermaid.initialize({
+          startOnLoad: true,
+          theme: 'base',
+          themeVariables: {
+              primaryColor:        '#424242',
+              primaryTextColor:    '#ffffff',
+              primaryBorderColor:  '#757575',
+              tertiaryColor:       '#e0e0e0',
+              tertiaryTextColor:   '#212121',
+              tertiaryBorderColor: '#9e9e9e',
+              lineColor:           '#9e9e9e',
+              edgeColor:           '#9e9e9e',
+              arrowheadColor:      '#9e9e9e'
+          },
+          flowchart: {
+            useMaxWidth: false
+          }
+        });
+      </script>
+    {{ end }}
+</body>
+
+</html>
