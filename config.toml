@@ -18,22 +18,14 @@ url = "https://github.com/MrCarri"
 name = "linkedin"
 url = "https://linkedin.com/in/alexandre-carrillo-costa"
 
-# [[params.socialIcons]]
-# name = "BuyMeACoffee"
-# url = "https://www.buymeacoffee.com/mrcarri"
-# # El título es opcional, pero mejora el accesibilidad al pasar el ratón.
-# title = "Support my projects"
 
-# URL opcional a tu página de Política de Privacidad (Muy recomendado para GDPR)
 # privacy_page = "/privacy-policy/"
 
-#[params.analytics]
-# Reemplaza 'G-XXXXXXXXXX' con tu ID real de Google Analytics 4 (GA4)
-#google = "G-XXXXXXXXXX"
+
 
 [params.footer]
 hideCopyright = true
-text = "© 2025 MrCarri Dev Blog"
+text = "© MrCarri Dev Blog. All rights reserved."
 
 [menu]
 [[menu.main]]
@@ -59,7 +51,6 @@ identifier = "github"
 name = "GitHub"
 url = "https://github.com/MrCarri"
 weight = 30
-# Opcional: Para abrir el enlace en una nueva pestaña
 [menu.main.params]
 target = "_blank"
 [[menu.main]]
@@ -67,6 +58,5 @@ identifier = "linkedin"
 name = "LinkedIn"
 url = "https://linkedin.com/in/alexandre-carrillo-costa"
 weight = 40
-# Opcional: Para abrir el enlace en una nueva pestaña
 [menu.main.params]
 target = "_blank"

@@ -419,6 +419,6 @@ This project is released under the MIT License. See the `LICENSE` file for detai
 
 So, to wrap up this article, we have a working architecture. A crawler, a vector database and LLM to filter. In theory, the system should work, taking user intent into account in addition to word-matching. In practice, the system is not perfect. As you might have noticed, the quality of the search results is closely related to the quality of the prompt. Actually, using a human-phrase input prompt leads to worse results. For example, if you start with "I want a manga that" if a vector contains this start, it will rank higher in the search even if it doesn't have any relation with the rest of the query. But overall, I think it's a fun experiment and was quite an enjoyable learning experience. 
 
-You will have the whole source code on my [Github](https://github.com/MrCarri), along with some instructions. In a future article, I want to work a bit on embedding and euclidean vs cosine searches, and some filtering. Stay tuned!
+You will have the whole source code on my [Github](https://github.com/MrCarri/semantic-manga-search), along with some instructions. In a future article, I want to work a bit on embedding and euclidean vs cosine searches, and some filtering. Stay tuned!
 
 If you’d like to try the prototype yourself, fork the repo, open an issue with any bug you find, or submit a pull request with a new feature (e.g., hybrid search). Happy hacking!
