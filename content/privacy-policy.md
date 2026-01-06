@@ -3,10 +3,6 @@ title: "Privacy Policy"
 date: 2026-01-06
 ---
 
-# Privacy Policy
-
-**Last Updated:** January 2026
-
 This Privacy Policy explains how MrCarri.dev collects and processes data. This site is designed with a "privacy-first" approach, focusing on transparency and minimal data collection.
 
 The data controller and owner of this website is Alexandre Carrillo (MrCarri), based in Barcelona, Spain.
