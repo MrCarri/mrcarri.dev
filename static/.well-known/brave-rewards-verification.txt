@@ -1,4 +1,0 @@
-This is a Brave Creators publisher verification file.
-
-Domain: mrcarri.dev
-Token: 3e23236b76afafa2fe9ae2e84f89e72095fc1183bdb1a1cc916c7d363e061cae
